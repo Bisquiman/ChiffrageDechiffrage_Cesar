@@ -7,14 +7,18 @@
 cle= int(input("choisis ta clé:"))
 message=input(str("Écrivez votre message codé:"))
 message_min=message.lower()
+
+#Remplace lettre avec accent par lettre sans accent
 remplace_accent = {224: 97, 225: 97, 226: 97, 231: 99, 232: 101, 233: 101, 234: 101, 235: 101, 238: 105, 239: 105,
                    244: 111, 246: 111, 249: 117, 251: 117, 252: 117}
 messageF=message_min.translate(remplace_accent)
 
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+taille = len(alphabet)
 
 def chifferage_cesar(messageF):
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    taille= len(alphabet)
+
+#Chiffrage du message
     listeCara = []
     for caractere in messageF:
         if caractere in alphabet:

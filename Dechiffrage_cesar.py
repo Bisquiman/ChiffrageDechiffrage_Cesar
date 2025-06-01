@@ -1,7 +1,7 @@
 #######################################################
 # Crée par Mathis Robinet
 # Crée le 2025-05-28 à 12h35, fini le 2025-05-28 à 18h17
-# Algorithm de dechiffrage du code César
+# Algorithm de déchiffrage du code César
 #######################################################
 import pandas as pd
 
@@ -22,11 +22,13 @@ tiret="-"
 taille=len(alphabet)
 
 def dechiffrage_cesar(codeF):
+
     for cle in range(1,taille):
         resultat= []
         proba = []
         resultat_dico= []
 
+#Analyse des caractèress du message
         for caractere in codeF:
             if caractere in alphabet:
                 index = alphabet.index(caractere)
@@ -51,15 +53,14 @@ def dechiffrage_cesar(codeF):
         n_espace = resultat_dico.count(" ")
         mot = resultat_dico.split()
 
-# À ajouter: si mot en début de phrase ajouter MAJ après trad + mots avec tiret
-
+# Vérification des mots dans le dico
         for i in range(n_espace+1):
             if mot[i] in dico["ortho"].to_list():
                 proba.append(1)
                 proba_FR=sum(proba)
                 pourcentage=((n_espace+1)*70)/100
-#Si le nombre de motrs francais dans le message est plus grand que 70% du nombre de mot du message, la clé est la bonne, comme ca ca résous le problème des "c'est"
-#ou le "c(apostrophe)" est conté comme un mot ou meme le probvleme des nom propre qui ne sont pas dans le dico.
+
+#Si le nombre de mots francais dans le message est plus grand que 70% du nombre de mot du message.
                 if  proba_FR > pourcentage:
                     print(f"Le code a une clé de {cle:} et est: {resultat}")
                     exit()
@@ -69,8 +70,3 @@ def dechiffrage_cesar(codeF):
     print("Le déchiffrage a échoué")
 
 dechiffrage_cesar(codeF)
-
-#je mange des choux-fleurs= to wkxqo noc mryeh-pvoebc (tiret)
-#gros bol= qbyc lyv
-#le gros chat escalade un arbre= oh jurv fkdw hvfdodgh xq dueuh
-#l'asticot = m'btujdpu
