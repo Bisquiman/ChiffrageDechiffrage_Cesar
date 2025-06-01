@@ -1,1 +1,2 @@
-import pandas
+# librairie
+* pandas: https://pandas.pydata.org/
