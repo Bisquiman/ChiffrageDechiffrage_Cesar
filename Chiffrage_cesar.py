@@ -1,5 +1,8 @@
-#Crée le 2025-05-28 à 23h59, fini le 2025-05-30 à 13h43
-#Algorithm de chiffrage en code César
+#######################################################
+# Crée par Mathis Robinet
+# Crée le 2025-05-28 à 23h59, fini le 2025-05-30 à 13h43
+# Algorithm de chiffrage en code César
+#######################################################
 
 cle= int(input("choisis ta clé:"))
 message=input(str("Écrivez votre message codé:"))
